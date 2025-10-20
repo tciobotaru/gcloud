@@ -17,7 +17,6 @@ gcloud compute networks subnets delete $SUBNET_NAME --region=$REGION --quiet || 
 echo "[5/5] Deleting VPC..."
 gcloud compute networks delete $VPC_NAME --quiet || echo "VPC not found."
 
-echo "Deleteing GCR"
-gcloud container images delete ${GCR_IMAGE} --force-delete-tags --quiet || echo "GCR not found"
-echo " All resources deleted successfully."
+echo " Deleting Artifact Registry repository..."
+gcloud artifacts repositories delete $AR_REPO_NAME --location=$REGION --quiet || echo "Artifact Registry repo not found."
 
