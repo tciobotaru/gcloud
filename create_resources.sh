@@ -78,7 +78,7 @@ EXTERNAL_IP=$(gcloud compute instances describe $VM_NAME \
   --zone=$ZONE \
   --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
 
-echo "🌐 Access your app at: http://$EXTERNAL_IP"
-echo "🔑 SSH access via: gcloud compute ssh $VM_NAME --zone=$ZONE"
+echo "Access your app at: http://$EXTERNAL_IP"
+echo "SSH access via: gcloud compute ssh $VM_NAME --zone=$ZONE"
 
 
